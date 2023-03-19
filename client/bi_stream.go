@@ -44,6 +44,9 @@ func callSayHelloBidirectionalStreaming(client pb.HelloServiceClient, names *pb.
 		time.Sleep(time.Second)
 	}
 
-	stream.CloseSend()
+	if err := stream.CloseSend(); err != nil {
+		log.Fatalf("Error: %v", err)
+	}
+
 	log.Printf("Streaming closed")
 }
