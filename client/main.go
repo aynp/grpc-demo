@@ -19,13 +19,9 @@ func main() {
 	}
 	defer conn.Close()
 
-	client := pb.NewHelloServiceClient(conn)
-	names := &pb.NameList{
-		Names: []string{"Aryan", "Arnav"},
-	}
+	client := pb.NewSumServiceClient(conn)
 
-	// callSayHello(client)
-	// callSayHelloServerStreaming(client, names)
-	//callSayHelloClientStreaming(client, names)
-	callSayHelloBidirectionalStreaming(client, names)
+	nums := []int64{2, 5, 10, 6, 7, 20}
+
+	callAddToSum(client, nums)
 }
