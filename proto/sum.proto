@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option go_package = "github.com/aynp/grpc-demo/proto";
+
+package sum_service;
+
+service SumService {
+  rpc AddToSum(stream SumRequest) returns (SumResponse);
+}
+
+message SumRequest {
+  int64 num = 1;
+}
+
+message SumResponse {
+  int64 sum = 1;
+}
