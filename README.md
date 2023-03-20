@@ -1,18 +1,5 @@
 # GRPC
 
+The client sends a stream of numbers to the server. The server then sums them up and return the total sum back to the client after the end of the stream.
 
-- **Unary RPC**
-
-    Client sends a single request to the Server and gets a single response back.
-
-- **Client Streaming RPC**
-
-  Client sends a stream of data and gets a single response back.
-
-- **Server Streaming RPC**
-
-  Client sends a single request and server sends a stream of response.
-
-- **Bidirectional Streaming RPC**
-
-  Both client and server send stream of data.
+This is an example use case of Client Streaming RPC.
