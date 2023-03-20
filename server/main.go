@@ -12,8 +12,8 @@ const (
 	port = ":8080"
 )
 
-type helloServer struct {
-	pb.HelloServiceServer
+type sumServer struct {
+	pb.SumServiceServer
 }
 
 func main() {
@@ -23,7 +23,7 @@ func main() {
 	}
 
 	grpcServer := grpc.NewServer()
-	pb.RegisterHelloServiceServer(grpcServer, &helloServer{})
+	pb.RegisterSumServiceServer(grpcServer, &sumServer{})
 
 	log.Printf("Server started at %v", lis.Addr())
 
